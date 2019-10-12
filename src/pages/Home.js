@@ -13,15 +13,15 @@ const home = () => {
           subtitle="THE PERFECT GIFT EVERY TIME"
         >
           <Link to="/rooms" className="btn-primary">
-            Goooo For
+            FOR HIM
           </Link>
-          <Link to="/rooms" className="btn-primary">
-            Goooo For  
+          <Link to="/rooms" className="btn-primary1">
+            FOR HER 
           </Link>
         </Banner>
       </Hero>
       {/* <Services /> */}
-      <FeaturedRooms />
+      {/* <FeaturedRooms /> */}
     </>
   );
 };
