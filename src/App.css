@@ -299,13 +299,13 @@ h6 {
 }
 /* end pf featured rooms */
 /* room */
-.room {
+/* .room {
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
 }
 .room:hover {
   box-shadow: var(--darkShadow);
-}
+} */
 
 .img-container {
   position: relative;
@@ -320,7 +320,7 @@ h6 {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
   color: var(--mainWhite);
   padding: 0.3rem 0.6rem 0.5rem;
   border-bottom-right-radius: 1rem;
@@ -344,23 +344,23 @@ h6 {
 .img-container:hover {
   background: rgba(0, 0, 0, 0.8);
 }
-.img-container:hover img {
+/* .img-container:hover img {
   opacity: 0.3;
-}
-.img-container:hover .price-top {
+} */
+/* .img-container:hover .price-top {
   opacity: 0;
-}
+} */
 .img-container:hover .room-link {
   transform: translate(-50%, -50%) scale(1);
 }
-.room-info {
+/* .room-info {
   background: var(--darkGrey);
   text-transform: capitalize;
   padding: 0.5rem 0;
   text-align: center;
   font-weight: 700;
   letter-spacing: var(--mainSpacing);
-}
+} */
 /* end of room  */
 /* single room*/
 

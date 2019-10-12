@@ -6,13 +6,13 @@ import RoomsContainer from "../components/RoomsContainer";
 const Rooms = () => {
   return (
     <>
-      <Hero hero="roomsHero">
-        <Banner title="our rooms">
+      {/* <Hero hero="roomsHero">
+        {/* <Banner title="our rooms">
           <Link to="/" className="btn-primary">
             return home
           </Link>
-        </Banner>
-      </Hero>
+        </Banner> */}
+      {/* </Hero> */} 
       <RoomsContainer />
     </>
   );

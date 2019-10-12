@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import defaultBcg from "../images/room-1.jpeg";
-import Hero from "../components/Hero";
-import Banner from "../components/Banner";
+// import Hero from "../components/Hero";
+// import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
 
@@ -50,13 +50,13 @@ export default class SingleRoom extends Component {
 
     return (
       <>
-        <StyledHero img={images[0] || this.state.defaultBcg}>
-          <Banner title={`${name} room`}>
+        {/* <StyledHero img={images[0] || this.state.defaultBcg}> */}
+          {/* <Banner title={`${name} room`}>
             <Link to="/rooms" className="btn-primary">
               back to rooms
             </Link>
-          </Banner>
-        </StyledHero>
+          </Banner> */}
+        {/* </StyledHero> */}
         <section className="single-room">
           <div className="single-room-images">
             {defaultImages.map((item, index) => (
@@ -81,14 +81,14 @@ export default class SingleRoom extends Component {
             </article>
           </div>
         </section>
-        <section className="room-extras">
+        {/* <section className="room-extras">
           <h6>extras </h6>
           <ul className="extras">
             {extras.map((item, index) => (
               <li key={index}>- {item}</li>
             ))}
           </ul>
-        </section>
+        </section> */}
       </>
     );
   }

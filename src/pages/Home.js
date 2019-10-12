@@ -13,7 +13,10 @@ const home = () => {
           subtitle="THE PERFECT GIFT EVERY TIME"
         >
           <Link to="/rooms" className="btn-primary">
-            Goooo For Gifts 
+            Goooo For
+          </Link>
+          <Link to="/rooms" className="btn-primary">
+            Goooo For  
           </Link>
         </Banner>
       </Hero>
