@@ -8,20 +8,16 @@ const home = () => {
   return (
     <>
       <Hero>
-        <Banner
-          title="gooooo Giftss"
-          subtitle="THE PERFECT GIFT EVERY TIME"
-        >
-          <Link to="/rooms" className="btn-primary">
+        <Banner title="Happy Gifting" subtitle="THE PERFECT GIFT EVERY TIME">
+          <Link to="/forHim" className="btn-primary">
             FOR HIM
           </Link>
-          <Link to="/rooms" className="btn-primary1">
-            FOR HER 
+          <Link to="/forHer" className="btn-primary1">
+            FOR HER
           </Link>
         </Banner>
       </Hero>
-      {/* <Services /> */}
-      {/* <FeaturedRooms /> */}
+      <Services />
     </>
   );
 };

@@ -12,6 +12,7 @@ export default class SingleRoom extends Component {
     console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
+      type: this.props.match.path,
       defaultBcg: defaultBcg
     };
   }
@@ -22,7 +23,8 @@ export default class SingleRoom extends Component {
   // }
   render() {
     const { getRoom } = this.context;
-    const room = getRoom(this.state.slug);
+    console.log(">>>>>>this.state.type", this.state.type);
+    const room = getRoom(this.state.slug, this.state.type);
 
     if (!room) {
       return (
@@ -37,6 +39,7 @@ export default class SingleRoom extends Component {
     const {
       name,
       description,
+      link,
       capacity,
       size,
       price,
@@ -50,13 +53,6 @@ export default class SingleRoom extends Component {
 
     return (
       <>
-        {/* <StyledHero img={images[0] || this.state.defaultBcg}> */}
-          {/* <Banner title={`${name} room`}>
-            <Link to="/rooms" className="btn-primary">
-              back to rooms
-            </Link>
-          </Banner> */}
-        {/* </StyledHero> */}
         <section className="single-room">
           <div className="single-room-images">
             {defaultImages.map((item, index) => (
@@ -67,6 +63,10 @@ export default class SingleRoom extends Component {
             <article className="desc">
               <h3>details</h3>
               <p>{description}</p>
+              <a href={link} target="_blank" className="btn-primary">
+                Buy Now
+              </a>
+              {/* <a href={link} className="nav-btn"></a> */}
             </article>
             <article className="info">
               <h3>info</h3>

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import items from "./data";
+import himData from "./data/forHimData";
+import herData from "./data/forHerData";
 import Client from "./Contentful";
 
 const RoomContext = React.createContext();
 
 export default class RoomProvider extends Component {
   state = {
-    rooms: [],
+    himGifts: [],
+    herGifts: [],
     sortedRooms: [],
     featuredRooms: [],
-  
+
     loading: true,
     //
     type: "all",
@@ -23,48 +25,13 @@ export default class RoomProvider extends Component {
     pets: false
   };
 
-  // getData = async () => {
-  //   try {
-  //     let response = await Client.getEntries({
-  //       content_type: "beachResortRoom"
-  //     });
-  //     let rooms = this.formatData(response.items);
-
-  //     let featuredRooms = rooms.filter(room => room.featured === true);
-  //     //
-  //     let maxPrice = Math.max(...rooms.map(item => item.price));
-  //     let maxSize = Math.max(...rooms.map(item => item.size));
-  //     this.setState({
-  //       rooms,
-  //       featuredRooms,
-  //       sortedRooms: rooms,
-  //       loading: false,
-  //       //
-  //       price: maxPrice,
-  //       maxPrice,
-  //       maxSize
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   componentDidMount() {
-    // this.getData();
-    let rooms = this.formatData(items);
-    let featuredRooms = rooms.filter(room => room.featured === true);
-    //
-    let maxPrice = Math.max(...rooms.map(item => item.price));
-    let maxSize = Math.max(...rooms.map(item => item.size));
+    let himGifts = this.formatData(himData);
+    let herGifts = this.formatData(herData);
     this.setState({
-      rooms,
-      featuredRooms,
-      sortedRooms: rooms,
+      himGifts,
       loading: false,
-      //
-      price: maxPrice,
-      maxPrice,
-      maxSize
+      herGifts
     });
   }
 
@@ -73,15 +40,22 @@ export default class RoomProvider extends Component {
       let id = item.sys.id;
       let images = item.fields.images.map(image => image.fields.file.url);
 
-      let room = { ...item.fields, images, id };
-      return room;
+      let gift = { ...item.fields, images, id };
+      return gift;
     });
     return tempItems;
   }
-  getRoom = slug => {
-    let tempRooms = [...this.state.rooms];
-    const room = tempRooms.find(room => room.slug === slug);
-    return room;
+
+  getRoom = (slug, type) => {
+    let tempGifts;
+    console.log(">>>>>>tempGiftstempGifts", type, "/forHer/:slug");
+    if (type === "/ForHer/:slug") {
+      tempGifts = [...this.state.herGifts];
+    } else {
+      tempGifts = [...this.state.himGifts];
+    }
+    const gift = tempGifts.find(gift => gift.slug === slug);
+    return gift;
   };
   handleChange = event => {
     const target = event.target;

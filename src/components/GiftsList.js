@@ -1,7 +1,8 @@
 import React from "react";
-import Room from "./Room";
-const RoomsList = ({ rooms }) => {
-  if (rooms.length === 0) {
+import SingleGiftComponant from "./SingleGiftComponant";
+
+const GiftsList = ({ gifts }) => {
+  if (gifts.length === 0) {
     return (
       <div className="empty-search">
         <h3>unfortunately no rooms matched your search parameters</h3>
@@ -11,12 +12,12 @@ const RoomsList = ({ rooms }) => {
   return (
     <section className="roomslist">
       <div className="roomslist-center">
-        {rooms.map(item => {
-          return <Room key={item.id} room={item} />;
+        {gifts.map(item => {
+          return <SingleGiftComponant key={item.id} gift={item} />;
         })}
       </div>
     </section>
   );
 };
 
-export default RoomsList;
+export default GiftsList;
