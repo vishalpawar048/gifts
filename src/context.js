@@ -48,7 +48,6 @@ export default class RoomProvider extends Component {
 
   getRoom = (slug, type) => {
     let tempGifts;
-    console.log(">>>>>>tempGiftstempGifts", type, "/forHer/:slug");
     if (type === "/ForHer/:slug") {
       tempGifts = [...this.state.herGifts];
     } else {

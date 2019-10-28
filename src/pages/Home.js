@@ -10,10 +10,10 @@ const home = () => {
       <Hero>
         <Banner title="Happy Gifting" subtitle="THE PERFECT GIFT EVERY TIME">
           <Link to="/forHim" className="btn-primary">
-            FOR HIM
+            HIM
           </Link>
           <Link to="/forHer" className="btn-primary1">
-            FOR HER
+            HER
           </Link>
         </Banner>
       </Hero>

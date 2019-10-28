@@ -16,7 +16,7 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/ForHim/" component={ForHim} />
